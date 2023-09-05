@@ -21,7 +21,7 @@ export class Person {
 		return `Hello, my name is ${this.getFullName()} (${this._kind})`;
 	};
 
-	getNameTagHtml = () => {
+	getNametagHtml = () => {
 		return /*html*/ `
 			<div class="bg-slate-700 w-[15rem] flex flex-col items-center p-3 mb-3">
 				<div class="text-orange-400 text-xl">${this.getFullName()}</div>
@@ -30,14 +30,5 @@ export class Person {
 		`;
 	}
 
-	static instantiate = (persons: Person[], person: IPerson) => {
-		switch (person.kind) {
-			case 'customer':
-				persons.push(new Customer(person.firstName, person.lastName));
-				break;
-			case 'employee':
-				persons.push(new Employee(person.firstName, person.lastName));
-				break;
-		}
-	}
 }
+
