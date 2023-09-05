@@ -5,20 +5,21 @@ import { IPerson } from './classes/interfaces';
 import { Customer } from './classes/customer';
 import { Employee } from './classes/employee';
 
-export const instantiatePerson = (persons: Person[], person: IPerson) => {
+export const instantiatePerson = (person: IPerson) => {
 	switch (person.kind) {
 		case 'customer':
-			persons.push(new Customer(person.firstName, person.lastName));
-			break;
+			return new Customer(person.firstName, person.lastName);
 		case 'employee':
-			persons.push(new Employee(person.firstName, person.lastName));
-			break;
+			return new Employee(person.firstName, person.lastName);
 	}
 }
 
 const persons: Person[] = [];
 for (const rawPerson of rawPersons) {
-	instantiatePerson(persons, rawPerson);
+	const person = instantiatePerson(rawPerson);
+	if (person) {
+		persons.push(person);
+	}
 }
 
 
