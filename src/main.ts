@@ -1,18 +1,7 @@
 import './style.css';
 import rawPersons from './data/persons.json';
 import { Person} from './classes/person';
-import { IPerson } from './classes/interfaces';
-import { Customer } from './classes/customer';
-import { Employee } from './classes/employee';
-
-export const instantiatePerson = (person: IPerson) => {
-	switch (person.kind) {
-		case 'customer':
-			return new Customer(person.firstName, person.lastName);
-		case 'employee':
-			return new Employee(person.firstName, person.lastName);
-	}
-}
+import { instantiatePerson } from './classes/factories';
 
 const persons: Person[] = [];
 for (const rawPerson of rawPersons) {
@@ -21,7 +10,6 @@ for (const rawPerson of rawPersons) {
 		persons.push(person);
 	}
 }
-
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = /*html*/ `
 <div>
