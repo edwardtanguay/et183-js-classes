@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Lena",
+    "lastName": "Weber",
+    "kind": "customer"
+  },
+  {
+    "firstName": "Matthias",
+    "lastName": "Schneider",
+    "kind": "employee"
+  },
+  {
+    "firstName": "Monika",
+    "lastName": "Müller",
+    "kind": "employee"
+  },
+  {
+    "firstName": "Hans",
+    "lastName": "Durenfeldt",
+    "kind": "employee"
+  }
+]
+

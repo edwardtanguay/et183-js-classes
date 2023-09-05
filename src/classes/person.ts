@@ -1,3 +1,7 @@
+import { Customer } from "./customer";
+import { Employee } from "./employee";
+import { IPerson } from "./interfaces";
+
 export class Person {
 
 	private _firstName: string = '';
@@ -24,5 +28,16 @@ export class Person {
 				<div>${this._kind}</div>
 			</div>	
 		`;
+	}
+
+	static instantiate = (persons: Person[], person: IPerson) => {
+		switch (person.kind) {
+			case 'customer':
+				persons.push(new Customer(person.firstName, person.lastName));
+				break;
+			case 'employee':
+				persons.push(new Employee(person.firstName, person.lastName));
+				break;
+		}
 	}
 }
